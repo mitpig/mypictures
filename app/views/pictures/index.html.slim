@@ -1,0 +1,9 @@
+#header Pictures List
+br
+a href="/pictures/new"
+  |upload picture
+hr
+- @pictures.each do |pic|
+  figure
+    = image_tag pic.image_url , size: "200x200"
+    figcaption = pic.title

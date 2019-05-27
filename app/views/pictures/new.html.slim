@@ -1,0 +1,9 @@
+h1
+  |Upload a image
+= form_for(@picture, :multipart => true) do |f|
+    = f.label :title
+    = f.text_field :title
+    br
+    = f.file_field :image
+    br
+    = f.submit "upload"
