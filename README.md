@@ -1,24 +1,27 @@
+
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: ruby 2.6.1p33
 
-Things you may want to cover:
+* Rails version: Rails 5.2.3
 
-* Ruby version
+* System dependencies:
+	* imagemagick: brew install imagemagick
+	* sqlite3: brew install sqlite3
 
-* System dependencies
 
-* Configuration
+* Configuration:
+	* make sure you have correct master.key in config/
 
-* Database creation
+* Database creation:
+	* rake db:create
 
-* Database initialization
+* Database initialization:
+	* rake db:migrate
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Deployment instructions:
+	*	git clone project
+	*	bundle install
+	*	put master.key to config/
+	*	create a user by Rails console
+	*	rails s
