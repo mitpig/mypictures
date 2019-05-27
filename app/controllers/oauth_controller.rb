@@ -15,7 +15,7 @@ class OauthController < ApplicationController
     picture = Picture.find(params[:id])
     tweet_url = "#{Rails.application.credentials.api_url}/api/tweets"
     access_token = OAuth2::AccessToken.new(client, session[:access_token])
-    pp access_token.post(tweet_url, {body: {:text => picture.title, :url => picture.image_url}})
+    access_token.post(tweet_url, {body: {:text => picture.title, :url => "http://localhost:3000#{picture.image_url}"}})
     redirect_to pictures_path
   end
 
