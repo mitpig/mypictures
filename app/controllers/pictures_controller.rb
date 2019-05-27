@@ -1,5 +1,6 @@
 class PicturesController < ApplicationController
   def index
+    @is_oauth = session[:access_token]
     @pictures = current_user.pictures.order(id: :desc)
   end
 
