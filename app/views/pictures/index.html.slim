@@ -7,10 +7,13 @@ br
 a href="/oauth/authenticate"
   |MyTwitterAppと連携
 hr
-- @pictures.each do |pic|
-  div style="border: 2px solid gray;padding:2px;"
-    = image_tag pic.image_url , size: "200x200"
-    label = pic.title
-    - if @is_oauth
-      a href="/api/tweet/#{pic.id}"
-        button type="button" ツイートする
+- if @pictures.present?
+  - @pictures.each do |pic|
+    div style="border: 2px solid gray;padding:2px;"
+      = image_tag pic.image_url , size: "200x200"
+      label = pic.title
+      - if @is_oauth
+        a href="/api/tweet/#{pic.id}"
+          button type="button" ツイートする
+- else
+  p No Pictures
