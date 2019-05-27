@@ -13,7 +13,7 @@ class PicturesController < ApplicationController
     if @picture.save
       redirect_to pictures_path, notice: '写真をアップロードしました'
     else
-      redirect_to pictures_path, alert: "error: #{@picture.errors.full_messages}"
+      redirect_to new_picture_path, alert: "error: #{@picture.errors.full_messages}"
     end
   end
 
